@@ -9,11 +9,17 @@ public class CountChar {
 
     @Test
     public void countChar() throws JSONException, FileNotFoundException {
+
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser.parse(new FileReader("/Users/manjunathb/IdeaProjects/ImmersionTask/src/test/resources/samplejsondata.json"));
             JSONObject jsonObject = (JSONObject)obj;
             String nameStr = (String)jsonObject.get("String");
+            //String length with space count
+            System.out.println("String length "+ nameStr.length());
+            
+
+            //String length without space Count
             int count=0;
             for(int i=0;i<nameStr.length();i++){
                 if(nameStr.charAt(i)!=' ')
